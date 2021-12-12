@@ -1,7 +1,7 @@
 {
     "app-id" : "ar.com.softwareperonista.Rockarrolla",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "40",
+    "runtime-version" : "41",
     "sdk" : "org.gnome.Sdk",
     "command" : "rockarrolla",
     "finish-args" : [
@@ -58,8 +58,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.com/softwareperonista/rockarrolla/-/archive/1.0/rockarrolla-1.0.tar.gz",
-                    "sha256" : "f80ea19a40d96aa3bda2eeb080361d66cc2cb0c28afadef867bf7296d3b90abd"
+                    "url" : "https://gitlab.com/softwareperonista/rockarrolla/-/archive/1.2/rockarrolla-1.2.tar.gz",
+                    "sha256" : "06c97d104b651f722c20a3091fc06d8f7b3dbb1f596a38c1489f32d9d66f31ab"
                 }
             ]
         }
