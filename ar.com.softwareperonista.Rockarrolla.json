@@ -9,7 +9,8 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--socket=pulseaudio",
-        "--device=dri"
+        "--device=dri",
+        "--share=ipc"
     ],
     "cleanup" : [
         "/include",
@@ -37,17 +38,30 @@
             ]
         },
         {
-            "name" : "taglib",
-            "buildsystem" : "cmake-ninja",
-            "config-opts" : [
-                "-DBUILD_SHARED_LIBS=ON"
-            ],
+            "name" : "gxml",
+            "buildsystem" : "meson",
             "builddir" : true,
+            "config-opts" : [
+            ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://taglib.github.io/releases/taglib-1.12.tar.gz",
-                    "sha256" : "7fccd07669a523b07a15bd24c8da1bbb92206cb19e9366c3692af3d79253b703"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gxml.git",
+                    "tag" : "0.20.3"
+                }
+            ]
+        },
+        {
+            "name" : "qrencode",
+            "buildsystem" : "autotools",
+            "builddir" : true,
+            "config-opts" : [
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/fukuchi/libqrencode.git",
+                    "tag" : "v4.1.1"
                 }
             ]
         },
@@ -58,8 +72,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gitlab.com/softwareperonista/rockarrolla/-/archive/1.2/rockarrolla-1.2.tar.gz",
-                    "sha256" : "06c97d104b651f722c20a3091fc06d8f7b3dbb1f596a38c1489f32d9d66f31ab"
+                    "url" : "https://gitlab.com/softwareperonista/rockarrolla/-/archive/1.4/rockarrolla-1.4.tar.gz",
+                    "sha256" : "5443574334abef1f397dfb06e62efab6e75934e0aa4de3bdc6def8f707ca3a13"
                 }
             ]
         }
