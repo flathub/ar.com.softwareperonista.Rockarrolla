@@ -1,10 +1,11 @@
 {
-    "app-id" : "ar.com.softwareperonista.Rockarrolla",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "47",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "rockarrolla",
-    "finish-args" : [
+    "app-id": "ar.com.softwareperonista.Rockarrolla",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "50",
+    "sdk": "org.gnome.Sdk",
+    "command": "rockarrolla",
+    "rename-appdata-file": "ar.com.softwareperonista.Rockarrolla.appdata.xml",
+    "finish-args": [
         "--share=network",
         "--socket=fallback-x11",
         "--socket=wayland",
@@ -12,72 +13,65 @@
         "--device=dri",
         "--share=ipc"
     ],
-    "cleanup" : [
+    "cleanup": [
         "/include",
         "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/gtk-doc",
         "/share/man",
-        "/share/pkgconfig",
         "/share/vala",
         "*.la",
         "*.a"
     ],
-    "modules" : [
+    "modules": [
         {
-            "name" : "doctrina",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "sources" : [
+            "name": "doctrina",
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://gitlab.com/softwareperonista/doctrina/-/archive/0.1.14.0/doctrina-0.1.14.0.tar.gz",
-                    "sha256" : "77996aef64a658b118b1b3fdcc8130b5f37a64d69363918a6e6eca53fb2af1e1"                    
+                    "type": "archive",
+                    "url": "https://gitlab.com/softwareperonista/doctrina/-/archive/0.1.14.0/doctrina-0.1.14.0.tar.gz",
+                    "sha256": "77996aef64a658b118b1b3fdcc8130b5f37a64d69363918a6e6eca53fb2af1e1"
                 }
             ]
         },
         {
-            "name" : "gxml",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
-            ],
-            "sources" : [
+            "name": "gxml",
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gxml.git",
-                    "tag" : "0.20.3"
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/gxml.git",
+                    "tag": "0.20.3",
+                    "commit": "3582c7eabf464ebd256a8f8ccbfc40f69800b222"
                 }
             ]
         },
         {
-            "name" : "qrencode",
-            "buildsystem" : "autotools",
-            "builddir" : true,
-            "config-opts" : [
-            ],
-            "sources" : [
+            "name": "qrencode",
+            "buildsystem": "autotools",
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/fukuchi/libqrencode.git",
-                    "tag" : "v4.1.1"
+                    "type": "git",
+                    "url": "https://github.com/fukuchi/libqrencode.git",
+                    "tag": "v4.1.1",
+                    "commit": "715e29fd4cd71b6e452ae0f4e36d917b43122ce8"
                 }
             ]
         },
         {
-            "name" : "rockarrolla",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "sources" : [
+            "name": "rockarrolla",
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://gitlab.com/softwareperonista/rockarrolla/-/archive/1.4/rockarrolla-1.4.tar.gz",
-                    "sha256" : "5443574334abef1f397dfb06e62efab6e75934e0aa4de3bdc6def8f707ca3a13"
+                    "type": "archive",
+                    "url": "https://gitlab.com/softwareperonista/rockarrolla/-/archive/1.4/rockarrolla-1.4.tar.gz",
+                    "sha256": "5443574334abef1f397dfb06e62efab6e75934e0aa4de3bdc6def8f707ca3a13"
                 },
                 {
-                    "type" : "patch",
-                    "path" : "fix_appdata.patch"
+                    "type": "patch",
+                    "paths": [
+                        "patches/fix-gdk_display_manager_get_was_called_before_gtk_init.patch",
+                        "patches/fix_appdata.patch"
+                    ]
                 }
             ]
         }
