@@ -20,13 +20,15 @@ index c474593..1897d17 100644
    </categories>
    <screenshots>
      <screenshot type="default">
-@@ -33,6 +32,9 @@
+@@ -33,6 +32,11 @@
      <release version="1.2" date="2021-12-12"/>
      <release version="1.0" date="2021-07-07"/>
    </releases>
-+  <developer_name>Software Peronista</developer_name>
++  <developer id="ar.com.softwareperonista">
++  		<name>Software Peronista</name>
++  </developer>
    <url type="homepage">https://gitlab.com/softwareperonista/rockarrolla</url>
-+  <url type="bugtracker">https://gitlab.com/softwareperonista/rockarrolla/-/issues</url>
++  <url type="bugtracker">https://gitlab.com/softwareperonista/rockarrolla/-/work_items</url>
 +  <url type="vcs-browser">https://gitlab.com/softwareperonista/rockarrolla</url>
    <update_contact>desarrolladores@softwareperonista.com.ar</update_contact>
  </component>
